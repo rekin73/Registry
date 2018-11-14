@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 
 class MyButton extends Component {
@@ -11,14 +11,14 @@ class MyButton extends Component {
 
     render() {
         return (
-            <View>
-                <Text> {this.props.testProp1} </Text>
-            </View>
+            <TouchableOpacity onPress={this.props.fn}>
+                <Text> {this.props.text} </Text>
+            </TouchableOpacity>
         );
     }
 }
 MyButton.propTypes = {
-
-
+    text: PropTypes.string.isRequired,
+    fn: PropTypes.func.isRequired,
 }
 export default MyButton

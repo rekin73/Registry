@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, FlatList } from 'react-native';
+import Users from './Users';
+import ListItem from './ListItem';
 
 export default class componentName extends Component {
     constructor(props) {
@@ -9,13 +11,16 @@ export default class componentName extends Component {
     }
 
     render() {
-        console.log(this.props.navigation.state.params.a)
-        console.log(this.props.navigation.state.params.b)
+        let data = this.props.navigation.state.params.data;
         return (
-            <Button
-                title="go to screen1"
-                onPress={() => this.props.navigation.navigate("s1")}
-            />
+            <View>
+
+                <Button
+                    title="go to screen1"
+                    onPress={() => this.props.navigation.navigate("Main")}
+                />
+                <Users data={data} />
+            </View>
         );
     }
 }
