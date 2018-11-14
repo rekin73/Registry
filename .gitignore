@@ -60,4 +60,6 @@ typings/
 # next.js build output
 .next
 
-*expo*.cmd
+_expo*.cmd
+expo.cmd
+expo-cli.cmd
