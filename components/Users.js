@@ -15,7 +15,7 @@ class Users extends Component {
         return (
             <FlatList
                 data={this.props.data}
-                renderItem={({ item }) => <ListItem a={item} />}
+                renderItem={({ item }) => <ListItem a={{ item }} />}
             />
         );
     }

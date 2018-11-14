@@ -43,7 +43,9 @@ export default class Main extends Component {
                         console.log("next")
                         this.props.navigation.navigate("Screen", { data: res.data })
                         break;
-
+                    case 'notok':
+                        alert('USEREXISTS')
+                        break;
                     default:
                         break;
                 }
