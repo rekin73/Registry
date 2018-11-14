@@ -4,18 +4,15 @@ app.use(express.json())
 var users = [];
 var _ID = 0;
 // respond with "hello world" when a GET request is made to the homepage
-let include = function (array, obj) {
-    return array.forEach(element => {
-        if (element.login == obj.login)
-            return true;
-        else
-            return false;
-    });
-}
+
 app.post('/addUser', function (req, res) {
-    if (include(users, req.body)) {
+    console.log(users.find(x => x.login === '45'))
+    if (users.find(x => x.login === req.body.login)!=undefined) {
         //res.json({ a: 0 })
-        res.json({ action: 'notok', a: req.body.login })
+        res.json({ action: 'userExists', a: req.body.login })
+    }
+    else if(req.body.login==''||req.body.password==""){
+        res.json({ action: 'emptyCredts', a: req.body.login })
     }
     else {
         let obj = req.body;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import MyButton from './MyButton';
+import Settings from './Settings';
 export default class ListItem extends Component {
     constructor(props) {
         super(props);
@@ -11,8 +12,8 @@ export default class ListItem extends Component {
     render() {
         console.log(this.props)
         return (
-            <View>
-                <Text>{this.props.a.item.key}:{this.props.a.item.login} {this.props.a.item.password}</Text><MyButton text="Edytuj" fn={() => { }} /><MyButton text="Usuń" fn={() => { }} />
+            <View style={Settings.styles.ListItem}>
+                <Image source={require('./user.png')} /><Text>{this.props.a.item.key}:{this.props.a.item.login} {this.props.a.item.password}</Text><MyButton text="Edytuj" fn={() => { }} /><MyButton text="Usuń" fn={() => { }} />
             </View>
         );
     }
