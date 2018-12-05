@@ -6,12 +6,12 @@ var _ID = 0;
 // respond with "hello world" when a GET request is made to the homepage
 
 app.post('/addUser', function (req, res) {
-    console.log(users.find(x => x.login === '45'))
-    if (users.find(x => x.login === req.body.login)!=undefined) {
+    //console.log(users.find(x => x.login === '45'))
+    if (users.find(x => x.login === req.body.login) != undefined) {
         //res.json({ a: 0 })
         res.json({ action: 'userExists', a: req.body.login })
     }
-    else if(req.body.login==''||req.body.password==""){
+    else if (req.body.login == '' || req.body.password == "") {
         res.json({ action: 'emptyCredts', a: req.body.login })
     }
     else {
@@ -25,7 +25,14 @@ app.post('/addUser', function (req, res) {
 
 
 })
+app.post('/deleteUser', function (req, res) {
+    let user = users.findIndex(x => x.login === req.body.login)
+    console.log(user);
+    users.splice(user, 1);
+    //res.json({ a: 0 })
+    res.json({ action: 'ok', data: users });
 
+})
 app.listen(3000, function () {
     console.log("start na porcie" + 3000);
 })

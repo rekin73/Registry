@@ -1,14 +1,14 @@
 export default {
-    address: "http://192.168.1.16",
+    address: "http://192.168.1.113",
     port: "3000",
-    styles:{
-        MyButton:{
+    styles: {
+        MyButton: {
 
         },
-        ListItem:{
-            flex:1,
-            flexDirection:"row",
-            
+        ListItem: {
+            flex: 1,
+            flexDirection: "row",
+
         }
     }
 }
