@@ -45,7 +45,7 @@ export default class ListItem extends Component {
         console.log(this.props)
         return (
             <View style={Settings.styles.ListItem}>
-                <Image source={require('./user.png')} /><Text>{this.props.a.item.key}:{this.props.a.item.login} {this.props.a.item.password}</Text><MyButton text="Edytuj" fn={this.handleClickEdit} /><MyButton text="Usuń" fn={this.handleClickDelete} />
+                <Image source={require('./user.png')} /><Text style={{ flex: 2 }}>{this.props.a.item.key}:{this.props.a.item.login} {this.props.a.item.password}</Text><MyButton text="Edytuj" style={{ flex: 1 }} fn={this.handleClickEdit} /><MyButton text="Usuń" style={{ flex: 1 }} fn={this.handleClickDelete} />
             </View>
         );
     }

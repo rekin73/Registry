@@ -4,6 +4,15 @@ import Users from './Users';
 import ListItem from './ListItem';
 
 export default class componentName extends Component {
+    static navigationOptions = {
+
+        title: "Admin Page",
+        headerStyle: {
+            backgroundColor: "lime",
+
+        }
+
+    }
     constructor(props) {
         super(props);
         this.handleEdit = this.handleEdit.bind(this);
@@ -16,14 +25,21 @@ export default class componentName extends Component {
     render() {
         let data = this.props.navigation.state.params.data;
         return (
-            <View>
+            <View style={styles.view}>
 
                 <Button
-                    title="go to screen1"
+                    title="Back to login page"
                     onPress={() => this.props.navigation.navigate("Main")}
+
                 />
                 <Users data={data} _handleEdit={this.handleEdit} />
             </View>
         );
     }
+}
+const styles = {
+    view: {
+        flex: 1
+    }
+
 }

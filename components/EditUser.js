@@ -7,7 +7,10 @@ export default class componentName extends Component {
     static navigationOptions = {
 
         title: "EditUser",
-
+        headerStyle: {
+            backgroundColor: "lime",
+            color: "white"
+        }
     }
     constructor(props) {
         super(props);
@@ -18,12 +21,24 @@ export default class componentName extends Component {
     render() {
         let data = this.props.navigation.state.params.data
         return (
-            <View>
-                <Image source={require('./user.png')} />
+            <View style={styles.style1}>
+                <Image source={require('./user.png')} style={styles.image} />
                 <Text>{data.login}</Text>
                 <Text>{data.password}</Text>
 
             </View>
         );
+    }
+}
+const styles = {
+    style1: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+
+    },
+    image: {
+        height: 200,
+        width: 200
     }
 }
